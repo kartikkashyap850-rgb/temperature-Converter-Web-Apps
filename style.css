@@ -1,0 +1,60 @@
+body {
+  font-family: Arial, sans-serif;
+  background: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.box {
+  background: gray;
+  padding: 20px;
+  border-radius: 8px;
+  width: 260px;
+  box-shadow: 0 3px 8px black;
+}
+
+h3 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: black;
+}
+
+label {
+  display: block;
+  margin-top: 8px;
+  font-size: 14px;
+  color: black;
+}
+
+input,
+select,
+button {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+button {
+  background: blue;
+  color: rgb(21, 4, 4);
+  border: none;
+  margin-top: 12px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: gold;
+}
+
+#res {
+  margin-top: 12px;
+  text-align: center;
+  font-weight: bold;
+  color: goldenrod;
+}

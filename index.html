@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Temp Converter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="box">
+    <h3>Temp Converter</h3>
+
+    <label>Value:</label>
+    <input type="number" id="val" placeholder="Enter number">
+
+    <label>From:</label>
+    <select id="from">
+      <option>Celsius</option>
+      <option>Fahrenheit</option>
+      <option>Kelvin</option>
+    </select>
+
+    <label>To:</label>
+    <select id="to">
+      <option>Celsius</option>
+      <option>Fahrenheit</option>
+      <option>Kelvin</option>
+    </select>
+
+    <button onclick="convert()">Convert</button>
+    <div id="res"></div>
+  </div>
+
+  <script>
+    function convert() {
+      let v = parseFloat(document.getElementById("val").value);
+      let f = document.getElementById("from").value;
+      let t = document.getElementById("to").value;
+      let res = document.getElementById("res");
+
+      if (isNaN(v)) {
+        res.textContent = "Enter a valid number!";
+        return;
+      }
+
+      // convert first to Celsius
+      if (f === "Fahrenheit") v = (v - 32) * 5 / 9;
+      else if (f === "Kelvin") v = v - 273.15;
+
+      // convert from Celsius to target
+      let result = t === "Fahrenheit" ? (v * 9 / 5) + 32 :
+                   t === "Kelvin" ? v + 273.15 : v;
+
+      res.textContent = `${result.toFixed(2)}° ${t}`;
+    }
+  </script>
+
+</body>
+</html>
